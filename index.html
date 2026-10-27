@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plataforma web de consulta de pasajes y gestión operativa de la Terminal La Sábana de Sincelejo." />
+  <title>Terminal La Sábana | Plataforma web</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="login-screen" class="login-layout">
+    <section class="login-brand">
+      <div class="brand-mark">LS</div>
+      <p class="eyebrow">TERMINAL DE TRANSPORTE</p>
+      <h1>Viaja mejor.<br><span>Todo en un solo lugar.</span></h1>
+      <p class="brand-copy">Consulta itinerarios, revisa horarios y gestiona la operación de la Terminal La Sábana.</p>
+      <div class="brand-points">
+        <div><span class="point-icon">↗</span><span>Consulta de rutas y horarios</span></div>
+        <div><span class="point-icon">◷</span><span>Información organizada</span></div>
+        <div><span class="point-icon">✓</span><span>Gestión operativa centralizada</span></div>
+      </div>
+      <div class="decor-circle circle-one"></div><div class="decor-circle circle-two"></div>
+    </section>
+    <section class="login-panel">
+      <form id="login-form" class="login-card" novalidate>
+        <div class="mobile-mark">LS</div>
+        <p class="eyebrow dark">BIENVENIDO/A</p>
+        <h2>Iniciar sesión</h2>
+        <p class="muted">Ingresa tus datos para continuar a la plataforma.</p>
+        <label for="username">Usuario</label>
+        <div class="input-wrap"><span aria-hidden="true">♙</span><input id="username" name="username" autocomplete="username" placeholder="Escribe tu usuario" required /></div>
+        <label for="password">Contraseña</label>
+        <div class="input-wrap"><span aria-hidden="true">▣</span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Escribe tu contraseña" required /><button class="show-password" type="button" id="toggle-password" aria-label="Mostrar contraseña">◉</button></div>
+        <p id="login-message" class="form-message" role="alert" aria-live="polite"></p>
+        <button class="btn btn-primary btn-full" type="submit">Ingresar <span>→</span></button>
+        <div class="demo-box"><strong>Accesos de demostración</strong><br>Administrador: <code>admin</code> / <code>admin123</code><br>Pasajero: <code>pasajero</code> / <code>pasajero123</code></div>
+        <p class="login-foot">Prototipo académico · Terminal La Sábana</p>
+      </form>
+    </section>
+  </div>
+
+  <div id="app-screen" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand"><div class="brand-mark small">LS</div><div><strong>La Sábana</strong><small>Terminal de transporte</small></div></div>
+      <div class="nav-label">MENÚ PRINCIPAL</div>
+      <nav id="main-nav" aria-label="Menú principal">
+        <button class="nav-item active" data-view="inicio"><span>⌂</span>Resumen</button>
+        <button class="nav-item" data-view="pasajes"><span>▤</span>Consultar pasajes</button>
+        <button class="nav-item" data-view="despachos"><span>⇄</span>Despachos y bahías</button>
+        <button class="nav-item" data-view="incidencias"><span>⚑</span>Incidencias</button>
+        <button class="nav-item admin-only" data-view="administracion"><span>▦</span>Administración</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="help-card"><span>✦</span><strong>¿Necesitas ayuda?</strong><p>Consulta con el personal de la terminal.</p></div><button id="logout-button" class="logout-button"><span>↪</span> Cerrar sesión</button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">☰</button><div class="breadcrumb">Plataforma <span>/</span> <strong id="page-name">Resumen</strong></div><div class="topbar-right"><span class="status-dot"></span><span class="online-label">Sistema de demostración</span><div class="avatar" id="user-avatar">A</div><div class="user-meta"><strong id="user-display">Administrador</strong><small id="role-display">Administrador</small></div></div></header>
+      <div class="content-area" id="content-area"></div>
+      <footer class="app-footer">Terminal de Transporte La Sábana · Prototipo académico <span>Los datos de rutas son ilustrativos.</span></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
